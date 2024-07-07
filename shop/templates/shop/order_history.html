@@ -1,0 +1,48 @@
+{% extends 'shop/header.html' %}
+
+{% block title %}Order History - Cake Store{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .register-container {
+        margin-top: 50px;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+</style>
+<div class="container register-container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h1>Order History</h1>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cake</th>
+                                <th>Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{ order.cake.name }}</td>
+                                <td>{{ order.quantity }}</td>
+                                <td>{{ order.status }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
