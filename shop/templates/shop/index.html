@@ -3,7 +3,33 @@
 {% block title %}Home - Cake Store{% endblock %}
 
 {% block content %}
-<h1>Welcome to Cake Store</h1>
+<h1 style="color: coral;">Welcome to Cake Store !!</h1>
+{% load static %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'img/cakebanner1.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/cakebanner2.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/cakebanner3.jpg' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<hr>
+<h5 style="color: chocolate;">你可以在這裡訂購想要的蛋糕~</h5>
 <div class="row">
     {% for cake in cakes %}
     <div class="col-md-4">
@@ -12,7 +38,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ cake.name }}</h5>
                 <p class="card-text">${{ cake.price }}</p>
-                <a href="{% url 'order' %}" class="btn btn-primary">Order Now</a>
+                <a href="{% url 'order' %}" class="btn btn-outline-primary">Order Now</a>
             </div>
         </div>
     </div>

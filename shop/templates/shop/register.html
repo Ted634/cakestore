@@ -5,7 +5,7 @@
 {% block content %}
 <style>
     body {
-        background-color: #f8f9fa;
+        background-color: #ffffff;
     }
 
     .register-container {
@@ -21,12 +21,14 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header text-center">
-                    <h1>Register</h1>
+                    <h1>會員註冊</h1>
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
                         {{ profile_form.as_p }}
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <!-- <button type="submit" class="btn btn-primary">註冊</button> -->
+                        <hr class="my-4">
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">註冊</button>
                     </form>
                 </div>
             </div>
