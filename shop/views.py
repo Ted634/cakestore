@@ -68,7 +68,7 @@ def user_login(request):
 
 
 # 添加訂單頁面
-@login_required
+@login_required(login_url='login')
 def order(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
